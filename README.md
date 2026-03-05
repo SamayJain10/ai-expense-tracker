@@ -18,7 +18,7 @@ AI-assisted development.
 
 📹 Screen Recording
 
-`[Demo Video](https://drive.google.com/file/d/1eSn0A59CKTDZkGRwi8LWMKREpOyhsaW9/view?usp=sharing)`
+[Demo Video](https://drive.google.com/file/d/1eSn0A59CKTDZkGRwi8LWMKREpOyhsaW9/view?usp=sharing)
 
 The demo shows:
 
