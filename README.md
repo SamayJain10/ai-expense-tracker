@@ -357,8 +357,6 @@ Most effective prompt pattern:
 Provide TypeScript interfaces first, then ask the model to implement
 around them.
 
-This dramatically reduced type errors.
-
 ------------------------------------------------------------------------
 
 # 📜 License
