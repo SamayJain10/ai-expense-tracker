@@ -4,7 +4,7 @@ A full-stack mobile app that lets you log expenses using plain English.
 
 Just type:
 
-Spent 850 on lunch at Taj
+`Spent 850 on lunch at Taj`
 
 and AI automatically extracts the amount, category, description, and
 merchant.
