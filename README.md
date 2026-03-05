@@ -129,16 +129,14 @@ This improves discoverability for first-time users.
 # 🗂️ Project Structure
 
 ai-expense-tracker/
-│
 ├── backend/
 │   ├── src/
 │   │   ├── index.ts                  # Express app entry point
 │   │   ├── database.ts               # SQLite connection + CRUD
 │   │   ├── routes/
-│   │   │   └── expenses.router.ts    # REST API routes
+│   │   │   └── expenses.ts    # REST API routes
 │   │   └── services/
 │   │       └── expenseParser.ts      # Groq AI parsing service
-│   │
 │   ├── .env.example
 │   └── package.json
 │
@@ -148,12 +146,11 @@ ai-expense-tracker/
 │   │   │   └── ExpenseTrackerScreen.tsx
 │   │   └── config/
 │   │       └── api.ts                # API base URL config
-│   │
 │   ├── App.tsx
 │   ├── .env.example
 │   └── package.json
 │
-└── README.mg
+└── README.md
 
 ------------------------------------------------------------------------
 
