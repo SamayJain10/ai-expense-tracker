@@ -153,7 +153,7 @@ ai-expense-tracker/
 │   ├── .env.example
 │   └── package.json
 │
-└── README.md
+└── README.mg
 
 ------------------------------------------------------------------------
 
@@ -174,16 +174,10 @@ https://console.groq.com
 ------------------------------------------------------------------------
 
 # 1️⃣ Clone the Repository
-<<<<<<< HEAD
 
 ```
 git clone https://github.com/SamayJain10/ai-expense-tracker.git
 cd ai-expense-tracker `
-=======
-```
-git clone https://github.com/your-username/ai-expense-tracker.git 
-cd ai-expense-tracker
->>>>>>> b6609290333e6fda335658e95f88899ce743d842
 ```
 
 ------------------------------------------------------------------------
@@ -267,12 +261,12 @@ Request
 
 Response
 
-```
+
 { "success": true, "data": { "id": 1, "amount": 450, "currency": "INR",
 "category": "Transport", "description": "Uber to airport", "merchant":
 "Uber", "original_input": "Uber to airport 450", "created_at":
 "2025-01-20T10:00:00Z" } }
-```
+
 
 ------------------------------------------------------------------------
 
