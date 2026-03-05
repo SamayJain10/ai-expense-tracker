@@ -127,7 +127,7 @@ This improves discoverability for first-time users.
 ------------------------------------------------------------------------
 
 # 🗂️ Project Structure
-
+```
 ai-expense-tracker/
 ├── backend/
 │   ├── src/
@@ -151,7 +151,7 @@ ai-expense-tracker/
 │   └── package.json
 │
 └── README.md
-
+```
 ------------------------------------------------------------------------
 
 # 🚀 Getting Started
