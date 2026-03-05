@@ -174,10 +174,16 @@ https://console.groq.com
 ------------------------------------------------------------------------
 
 # 1️⃣ Clone the Repository
+<<<<<<< HEAD
 
 ```
 git clone https://github.com/SamayJain10/ai-expense-tracker.git
 cd ai-expense-tracker `
+=======
+```
+git clone https://github.com/your-username/ai-expense-tracker.git 
+cd ai-expense-tracker
+>>>>>>> b6609290333e6fda335658e95f88899ce743d842
 ```
 
 ------------------------------------------------------------------------
