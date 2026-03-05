@@ -4,7 +4,7 @@ A full-stack mobile app that lets you log expenses using plain English.
 
 Just type:
 
-Spent 850 on lunch at Taj
+`Spent 850 on lunch at Taj`
 
 and AI automatically extracts the amount, category, description, and
 merchant.
@@ -18,7 +18,7 @@ AI-assisted development.
 
 📹 Screen Recording
 
-(Add your Loom / Drive / YouTube demo link here)
+`[Demo Video](https://drive.google.com/file/d/1eSn0A59CKTDZkGRwi8LWMKREpOyhsaW9/view?usp=sharing)`
 
 The demo shows:
 
@@ -32,19 +32,30 @@ The demo shows:
 
 # ⚙️ Tech Stack
 
-  Layer      Technology
-  ---------- --------------------------------------
-  Mobile     React Native, Expo, TypeScript
-  Backend    Node.js, Express, TypeScript
-  Database   SQLite via `better-sqlite3`
-  AI         Groq API (`llama-3.3-70b-versatile`)
+| Layer        | Technology                           |
+| ------------ | ------------------------------------ |
+| **Mobile**   | React Native, Expo, TypeScript       |
+| **Backend**  | Node.js, Express, TypeScript         |
+| **Database** | SQLite via `better-sqlite3`          |
+| **AI**       | Groq API (`llama-3.3-70b-versatile`) |
+
 
 ------------------------------------------------------------------------
 
 # 🧠 Architecture Overview
 
-Mobile App (React Native) │ │ REST API ▼ Express Backend (Node.js) │ │
-AI Parsing ▼ Groq LLM API │ ▼ SQLite Database
+Mobile App (React Native)
+        │
+        │ REST API
+        ▼
+Express Backend (Node.js)
+        │
+        │ AI Parsing
+        ▼
+Groq LLM API
+        │
+        ▼
+SQLite Database
 
 Flow:
 
@@ -63,7 +74,11 @@ Flow:
 
 Describe expenses however you want:
 
-Uber to airport 450 Netflix subscription 649 Electricity bill 2300
+```
+Uber to airport 450
+Netflix subscription 649 
+Electricity bill 2300
+```
 
 AI automatically extracts structured data.
 
@@ -105,7 +120,7 @@ Header shows live total spending across all expenses.
 
 The UI suggests example commands to guide users:
 
-Uber to office 350 Netflix subscription 649 Electricity bill 2300
+`Uber to office 350 Netflix subscription 649 Electricity bill 2300`
 
 This improves discoverability for first-time users.
 
@@ -113,12 +128,32 @@ This improves discoverability for first-time users.
 
 # 🗂️ Project Structure
 
-ai-expense-tracker/ │ ├── backend/ │ ├── src/ │ │ ├── index.ts │ │ ├──
-database.ts │ │ ├── routes/ │ │ │ └── expenses.router.ts │ │ └──
-services/ │ │ └── expenseParser.ts │ ├── .env.example │ └── package.json
-│ ├── mobile/ │ ├── src/ │ │ ├── screens/ │ │ │ └──
-ExpenseTrackerScreen.tsx │ │ └── config/ │ │ └── api.ts │ ├── App.tsx │
-├── .env.example │ └── package.json │ └── README.md
+ai-expense-tracker/
+│
+├── backend/
+│   ├── src/
+│   │   ├── index.ts                  # Express app entry point
+│   │   ├── database.ts               # SQLite connection + CRUD
+│   │   ├── routes/
+│   │   │   └── expenses.router.ts    # REST API routes
+│   │   └── services/
+│   │       └── expenseParser.ts      # Groq AI parsing service
+│   │
+│   ├── .env.example
+│   └── package.json
+│
+├── mobile/
+│   ├── src/
+│   │   ├── screens/
+│   │   │   └── ExpenseTrackerScreen.tsx
+│   │   └── config/
+│   │       └── api.ts                # API base URL config
+│   │
+│   ├── App.tsx
+│   ├── .env.example
+│   └── package.json
+│
+└── README.md
 
 ------------------------------------------------------------------------
 
@@ -130,7 +165,7 @@ ExpenseTrackerScreen.tsx │ │ └── config/ │ │ └── api.ts │ 
 -   npm or yarn
 -   Expo CLI
 
-npm install -g expo-cli
+`npm install -g expo-cli`
 
 -   A free Groq API key
 
@@ -140,44 +175,58 @@ https://console.groq.com
 
 # 1️⃣ Clone the Repository
 
-git clone https://github.com/your-username/ai-expense-tracker.git cd
-ai-expense-tracker
+```
+git clone https://github.com/SamayJain10/ai-expense-tracker.git
+cd ai-expense-tracker `
+```
 
 ------------------------------------------------------------------------
 
 # 2️⃣ Backend Setup
 
-cd backend npm install cp .env.example .env
+```
+cd backend 
+npm install 
+cp .env.example .env
+```
 
 Edit `.env`:
 
-GROQ_API_KEY=gsk_your_key_here PORT=3000 DB_PATH=./expenses.db
+```
+GROQ_API_KEY=gsk_your_key_here 
+PORT=3000 
+DB_PATH=./expenses.db
+```
 
 Start the backend server:
 
-npm run dev
+`npm run dev`
 
 Server will run at:
 
-http://localhost:3000
+`http://localhost:3000`
 
 Test:
 
-curl http://localhost:3000/health
+`curl http://localhost:3000/health`
 
 Response:
 
-{ "status": "ok" }
+`{ "status": "ok" }`
 
 ------------------------------------------------------------------------
 
 # 3️⃣ Mobile Setup
 
-cd mobile npm install cp .env.example .env
+```
+cd mobile 
+npm install 
+cp .env.example .env
+```
 
 Edit `.env`:
 
-EXPO_PUBLIC_API_URL=http://192.168.1.x:3000
+`EXPO_PUBLIC_API_URL=http://192.168.1.x:3000`
 
 Do NOT use localhost when testing on a phone.
 
@@ -185,11 +234,14 @@ Use your local network IP.
 
 Find it with:
 
-Windows: ipconfig Mac/Linux: ifconfig
+```
+Windows: ipconfig 
+Mac/Linux: ifconfig
+```
 
 Start the mobile app:
 
-npx expo start
+`npx expo start`
 
 Then:
 
@@ -209,10 +261,12 @@ Request
 
 Response
 
+```
 { "success": true, "data": { "id": 1, "amount": 450, "currency": "INR",
 "category": "Transport", "description": "Uber to airport", "merchant":
 "Uber", "original_input": "Uber to airport 450", "created_at":
 "2025-01-20T10:00:00Z" } }
+```
 
 ------------------------------------------------------------------------
 
@@ -261,17 +315,18 @@ This allows the API to return:
 
 # ⏱️ Time Breakdown
 
-  Task                      Time
-  ------------------------- -----------
-  Project setup             15 min
-  Database + CRUD           10 min
-  AI parsing service        15 min
-  Express routes            10 min
-  React Native screen       30 min
-  Dark theme                15 min
-  Swipe-to-delete gesture   10 min
-  Testing & polish          15 min
-  Total                     \~2 hours
+| Task                    | Time         |
+| ----------------------- | ------------ |
+| Project setup           | 15 min       |
+| Database + CRUD         | 10 min       |
+| AI parsing service      | 15 min       |
+| Express routes          | 10 min       |
+| React Native screen     | 30 min       |
+| Dark theme              | 15 min       |
+| Swipe-to-delete gesture | 10 min       |
+| Testing & polish        | 15 min       |
+| **Total**               | **~2 hours** |
+
 
 ------------------------------------------------------------------------
 
